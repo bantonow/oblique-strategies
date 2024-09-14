@@ -40,6 +40,8 @@ Credit:
 
 * Created by Brian Eno and Peter Schmidt; first published in 1975. Buy a deck [here](https://www.enoshop.co.uk/product/oblique-strategies.html)
 
+* _Eno_, 2024
+
 * https://github.com/joelparkerhenderson/oblique-strategies
 
 * https://monoskop.org/images/8/8c/Eno_Brian_Schmidt_Peter_Oblique_Strategies.pdf
