@@ -1,5 +1,9 @@
 #!/bin/bash
+#
 # Random Oblique Strategy Selector
+#
+# Ben Antonow <antonow@umich.edu>
+
 set -Eeuo pipefail
 # Path to the file containing the strategies
 STRATEGIES_FILE=~/bin/oblique_strategies/strategies.txt
