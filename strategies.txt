@@ -2,19 +2,19 @@ Abandon normal instruments
 Accept advice
 Accretion
 A line has two sides
-Allow an easement (an easement is the abandonment of a stricture)
+Allow an easement \n(an easement is the abandonment of a stricture)
 Are there sections? Consider transitions
 Ask people to work against their better judgement
 Ask your body
-Assemble some of the instruments in a group and treat the group
-Balance the consistency principle with the inconsistency principle
+Assemble some of the instruments in a \ngroup and treat the group
+Balance the consistency principle \nwith the inconsistency principle
 Be dirty
 Breathe more deeply
 Bridges \n-build \n-burn
 Cascades
 Change instrument roles
 Change nothing and continue with immaculate consistency
-Children's voices -speaking -singing
+Children's voices \n-speaking \n-singing
 Cluster analysis
 Consider different fading systems
 Consult other sources \npromising \nunpromising
@@ -23,7 +23,7 @@ Courage!
 Cut a vital connection
 Decorate, decorate
 Define an area as `safe' and use it as an anchor
-Destroy \nnothing \nthe most important thing
+Destroy \n-nothing \n-the most important thing
 Discard an axiom
 Disconnect from desire
 Discover the recipes you are using and abandon them
@@ -55,21 +55,21 @@ Humanize something free of error
 Imagine the music as a moving chain or caterpillar
 Imagine the music as a set of disconnected events
 Infinitesimal gradations
-Intentions \ncredibility of \nnobility of \nhumility of
+Intentions \n-credibility of \n-nobility of \n-humility of
 Into the impossible
 Is it finished?
 Is there something missing?
 Is the tuning appropriate?
 Just carry on
 Left channel, right channel, centre channel
-Listen in total darkness, or in a very large room, very quietly
+Listen in total darkness, \nor in a very large room, very quietly
 Listen to the quiet voice
 Look at a very small object, look at its centre
 Look at the order in which you do things
-Look closely at the most embarrassing details and amplify them
+Look closely at the most embarrassing \ndetails and amplify them
 Lowest common denominator check: \nsingle beat \nsingle note \nsingle riff
-Make a blank valuable by putting it in an exquisite frame
-Make an exhaustive list of everything you might do and do the last thing on the list
+Make a blank valuable \nby putting it in an exquisite frame
+Make an exhaustive list of everything you might do \nand do the last thing on the list
 Make a sudden, destructive unpredictable action; incorporate
 Mechanicalize something idiosyncratic
 Mute and continue
@@ -82,12 +82,12 @@ Remove ambiguities and convert to specifics
 Remove specifics and convert to ambiguities
 Repetition is a form of change
 Reverse
-Short circuit \n(example: a man eating peas with the idea that they will improve his virility shovels them straight into his lap)
+Short circuit \n(example: a man eating peas with the idea that they will \nimprove his virility shovels them straight into his lap)
 Shut the door and listen from outside
 Simple subtraction
 Spectrum analysis
 Take a break
-Take away the elements in order of apparent non-importance
+Take away the elements in order \nof apparent non-importance
 Tape your mouth (given by Ritva Saarikko)
 The inconsistency principle
 The tape is now the music
@@ -102,7 +102,7 @@ Use fewer notes
 Use filters
 Use "unqualified" people
 Water
-What are you really thinking about just now? Incorporate
+What are you really thinking about just now? \nIncorporate.
 What is the reality of the situation?
 What mistakes did you make last time?
 What would your closest friend do?
@@ -112,3 +112,5 @@ You are an engineer
 You can only make one dot at a time
 You don't have to be ashamed of using your own ideas
 [blank white card]
+The most important thing is the thing \nmost easily forgotten
+Always give yourself credit for having \nmore than personality

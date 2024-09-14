@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 #
 # Random Oblique Strategy Selector
 #
@@ -24,51 +24,65 @@ else
     STRATEGY=$(awk "NR==$RANDOM_LINE" "$STRATEGIES_FILE")
 fi
 
+# Replace '\n' sequences with actual newlines
+STRATEGY=$(printf '%b' "$STRATEGY")
 
-# Compute the length of the text
-TEXT_LEN=${#STRATEGY}
+# Split the strategy into an array of lines
+readarray -t LINES <<< "$STRATEGY"
+
+# Find the maximum length of the lines
+MAX_LEN=0
+for LINE in "${LINES[@]}"; do
+    LINE_LEN=${#LINE}
+    (( LINE_LEN > MAX_LEN )) && MAX_LEN=$LINE_LEN
+done
 
 # Define padding
 PADDING=2  # Number of spaces on each side of the text inside the rectangle
 
 # Compute the width of the rectangle
-WIDTH=$((TEXT_LEN + 2 * PADDING + 2))  # +2 for the border characters '|'
+WIDTH=$((MAX_LEN + 2 * PADDING + 2))  # +2 for the border characters '|'
+
+# Get terminal width
+TERM_WIDTH=$(tput cols)
+
+# Compute the left margin to center the rectangle
+MARGIN=$(( (TERM_WIDTH - WIDTH) / 2 ))
+
+# Ensure margin is at least zero
+(( MARGIN < 0 )) && MARGIN=0
 
 # Compute the available width inside the rectangle (excluding borders)
 AVAIL_WIDTH=$((WIDTH - 2))
-
-# Compute left and right padding to center the text
-PADDING_SPACE=$((AVAIL_WIDTH - TEXT_LEN))
-LEFT_PADDING=$((PADDING_SPACE / 2))
-RIGHT_PADDING=$((PADDING_SPACE - LEFT_PADDING))
 
 # Construct the top and bottom borders
 TOP_BORDER="+"$(printf '%.0s-' $(seq 1 $((WIDTH - 2))))"+"
 
 # Construct empty padding line
-EMPTY_LINE="|"$(printf '%.0s ' $(seq 1 $((WIDTH - 2))))"|"
-
-BOLD='\033[1m'
-
-# Construct the line with the centered text
-TEXT_LINE="|"
-TEXT_LINE+=$(printf '%.0s ' $(seq 1 $LEFT_PADDING))
-TEXT_LINE+="$STRATEGY"
-TEXT_LINE+=$(printf '%.0s ' $(seq 1 $RIGHT_PADDING))
-TEXT_LINE+="|"
+EMPTY_LINE="|"$(printf ' %.0s' $(seq 1 $AVAIL_WIDTH))"|"
 
 # Output the rectangle
-echo "$TOP_BORDER"
-echo "$EMPTY_LINE"
-echo -e "$TEXT_LINE"
-echo "$EMPTY_LINE"
-echo "$TOP_BORDER"
+printf "%*s\n" $((WIDTH + MARGIN)) "$TOP_BORDER"
+printf "%*s\n" $((WIDTH + MARGIN)) "$EMPTY_LINE"
 
+for LINE in "${LINES[@]}"; do
+    LINE="${LINE#"${LINE%%[![:space:]]*}"}"
+    LINE="${LINE%"${LINE##*[![:space:]]}"}"
+    
+    LINE_LEN=${#LINE}
+    PADDING_SPACE=$((AVAIL_WIDTH - LINE_LEN))
+    LEFT_PADDING=$(( (PADDING_SPACE + 1) / 2 ))
+    RIGHT_PADDING=$(( PADDING_SPACE / 2 ))
 
+    # Construct the line with the centered text
+    TEXT_LINE="|"
+    TEXT_LINE+=$(printf '%*s' $LEFT_PADDING '')
+    TEXT_LINE+="$LINE"
+    TEXT_LINE+=$(printf '%*s' $RIGHT_PADDING '')
+    TEXT_LINE+="|"
 
-# BOLD='\033[1m'
-# RESET='\033[0m'
+    printf "%*s\n" $((WIDTH + MARGIN)) "$TEXT_LINE"
+done
 
-# Display the selected strategy
-
-# "\n\n${BOLD}$STRATEGY\n\n"
+printf "%*s\n" $((WIDTH + MARGIN)) "$EMPTY_LINE"
+printf "%*s\n" $((WIDTH + MARGIN)) "$TOP_BORDER"
