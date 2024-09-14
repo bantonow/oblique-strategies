@@ -24,7 +24,7 @@ source ~/.zshrc # if you're using zsh
 Finally, run this command to make the script executable
 
 ```
-chmod +x ~/bin/oblique_strategies/oblique
+chmod +x ~/bin/oblique-strategies/oblique
 ```
 
 Now, you can run the script in your shell by typing 
