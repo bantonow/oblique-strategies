@@ -1,0 +1,70 @@
+#!/bin/bash
+# Random Oblique Strategy Selector
+set -Eeuo pipefail
+# Path to the file containing the strategies
+STRATEGIES_FILE=~/oblique_strategies.txt
+
+# Check if the file exists
+if [[ ! -f "$STRATEGIES_FILE" ]]; then
+    echo "Strategies file not found at $STRATEGIES_FILE"
+    exit 1
+fi
+
+# Method 1: Using shuf (preferred if available)
+if command -v shuf >/dev/null 2>&1; then
+    STRATEGY=$(shuf -n 1 "$STRATEGIES_FILE")
+else
+    # Method 2: Using awk and RANDOM (alternative)
+    NUM_STRATEGIES=$(wc -l < "$STRATEGIES_FILE")
+    RANDOM_LINE=$(( RANDOM % NUM_STRATEGIES + 1 ))
+    STRATEGY=$(awk "NR==$RANDOM_LINE" "$STRATEGIES_FILE")
+fi
+
+
+# Compute the length of the text
+TEXT_LEN=${#STRATEGY}
+
+# Define padding
+PADDING=2  # Number of spaces on each side of the text inside the rectangle
+
+# Compute the width of the rectangle
+WIDTH=$((TEXT_LEN + 2 * PADDING + 2))  # +2 for the border characters '|'
+
+# Compute the available width inside the rectangle (excluding borders)
+AVAIL_WIDTH=$((WIDTH - 2))
+
+# Compute left and right padding to center the text
+PADDING_SPACE=$((AVAIL_WIDTH - TEXT_LEN))
+LEFT_PADDING=$((PADDING_SPACE / 2))
+RIGHT_PADDING=$((PADDING_SPACE - LEFT_PADDING))
+
+# Construct the top and bottom borders
+TOP_BORDER="+"$(printf '%.0s-' $(seq 1 $((WIDTH - 2))))"+"
+
+# Construct empty padding line
+EMPTY_LINE="|"$(printf '%.0s ' $(seq 1 $((WIDTH - 2))))"|"
+
+BOLD='\033[1m'
+
+# Construct the line with the centered text
+TEXT_LINE="|"
+TEXT_LINE+=$(printf '%.0s ' $(seq 1 $LEFT_PADDING))
+TEXT_LINE+="$STRATEGY"
+TEXT_LINE+=$(printf '%.0s ' $(seq 1 $RIGHT_PADDING))
+TEXT_LINE+="|"
+
+# Output the rectangle
+echo "$TOP_BORDER"
+echo "$EMPTY_LINE"
+echo -e "$TEXT_LINE"
+echo "$EMPTY_LINE"
+echo "$TOP_BORDER"
+
+
+
+# BOLD='\033[1m'
+# RESET='\033[0m'
+
+# Display the selected strategy
+
+# "\n\n${BOLD}$STRATEGY\n\n"
