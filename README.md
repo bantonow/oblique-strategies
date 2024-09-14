@@ -11,7 +11,7 @@ www.benantonow.com
 In order to add this script to your shell, put this directory in your ~/bin directory, and add the following line to your ~/.bashrc or ~/.zshrc file.
 
 ```
-export PATH="$HOME/bin/oblique_strategies:$PATH"
+export PATH="$HOME/bin/oblique-strategies:$PATH"
 ```
 
 Then, update your rc file with the following command:
