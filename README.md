@@ -1,14 +1,13 @@
 Oblique Strategies Card Puller 
 ====================
 
-A shell script to print a random card from Oblique Strategies by Brian Eno and Peter Schmidt
+A shell script to print a random card from [Oblique Strategies](https://en.wikipedia.org/wiki/Oblique_Strategies) by Brian Eno and Peter Schmidt.
 
-Ben Antonow antonow@umich.edu
-www.benantonow.com
-
+Ben Antonow | antonow@umich.edu | www.benantonow.com
 
 
-In order to add this script to your shell, put this directory in your ~/bin directory, and add the following line to your ~/.bashrc or ~/.zshrc file.
+
+In order to add this script to your shell, clone this repo in your ~/bin directory, and add the following line to your ~/.bashrc or ~/.zshrc file.
 
 ```
 export PATH="$HOME/bin/oblique-strategies:$PATH"
@@ -16,9 +15,13 @@ export PATH="$HOME/bin/oblique-strategies:$PATH"
 
 Then, update your rc file with the following command:
 
+If you're using bash:
 ```
-source ~/.bashrc # if you're using bash
-source ~/.zshrc # if you're using zsh
+source ~/.bashrc
+```
+If you're using zsh:
+```
+source ~/.zshrc
 ```
 
 Finally, run this command to make the script executable
@@ -35,7 +38,7 @@ oblique
 
 Credit:
 
-* Created by Brian Eno and Peter Schmidt; first published in 1975.
+* Created by Brian Eno and Peter Schmidt; first published in 1975. Buy a deck [here](https://www.enoshop.co.uk/product/oblique-strategies.html)
 
 * https://github.com/joelparkerhenderson/oblique-strategies
 
