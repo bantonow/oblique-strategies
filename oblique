@@ -2,7 +2,7 @@
 # Random Oblique Strategy Selector
 set -Eeuo pipefail
 # Path to the file containing the strategies
-STRATEGIES_FILE=~/oblique_strategies.txt
+STRATEGIES_FILE=~/bin/oblique_strategies/strategies.txt
 
 # Check if the file exists
 if [[ ! -f "$STRATEGIES_FILE" ]]; then
