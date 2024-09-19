@@ -7,6 +7,16 @@ Ben Antonow | antonow@umich.edu | www.benantonow.com
 
 
 
+This script requires Bash 4.0 or higher. I use the version of Bash that is in my /opt/homebrew/bin/bash to run this script, as Bash on MacOS is installed by default as Bash 3.2.57. I installed the most recent version of bash using homebrew, as I use MacOS. If you are a Mac user, you can ensure you have a correct version of bash installed by running: 
+
+```
+brew install bash
+```
+
+If you are a Windows user, or know you have Bash $\geq$ 4.0 installed elsewhere, you can modify the path in the shebang on line 1 of oblique.
+
+
+
 In order to add this script to your shell, clone this repo in your ~/bin directory, and add the following line to your ~/.bashrc or ~/.zshrc file.
 
 ```
